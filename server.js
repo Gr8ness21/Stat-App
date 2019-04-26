@@ -10,7 +10,7 @@ app.set('view engine', 'hbs');
 
 // connecting to the port/view
 // displays when you go to local server - localhost:3000/
-app.get('/users', (req, res) =>{
+app.get('/', (req, res) =>{
     res.send('Im in this bih!');
 });
 
