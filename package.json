@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Gr8ness21/Stat-App/issues"
   },
-  "homepage": "https://github.com/Gr8ness21/Stat-App#readme"
+  "homepage": "https://github.com/Gr8ness21/Stat-App#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.4",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.5.3"
+  }
 }
