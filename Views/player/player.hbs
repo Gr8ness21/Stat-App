@@ -1,0 +1,19 @@
+<h1>{{player.name}}</h1>
+
+<h2>Player</h2>
+<ul>
+    {{#each players}}
+    <li>
+        {{name}}
+    </li>
+    {{/each}}
+</ul>
+
+<form method="POST" action="/players/{{ player._id }}?_method=DELETE">
+    <input type="submit" value="Delete Player" />
+</form>
+
+<form method="POST" action="/players/{{ player._id }}?_method=PUT">
+    <input type="text" name="name" value="" />
+    <input type="submit" value="Update Player" />
+</form>
