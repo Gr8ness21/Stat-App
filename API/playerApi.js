@@ -19,7 +19,13 @@ function createPlayer(newPlayer, playerId){
     return PlayerCollection.create(newPlayer);
 }
 
-// Function to Get all players
+// Fuction to get all Players
+function getAllPlayers() {
+    //using mongoose to get all teams
+    return PlayerCollection.find();
+}
+
+// Function to Get all players by Id
 function getAllPlayersByPlayerId(pId) {
     return PlayerCollection.find({ playerId: pId});
 }
@@ -37,6 +43,7 @@ function deletePlayerById(playerId) {
 // calls all established functions to be exported
 module.exports = {
     createPlayer,
+    getAllPlayers,
     getAllPlayersByPlayerId,
     getPlayerById,
     deletePlayerById

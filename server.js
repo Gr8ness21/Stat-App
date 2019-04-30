@@ -70,6 +70,44 @@ app.put('/teams/:teamId', (req, res) =>{
     });
 });
 
+// -------------------------------
+// Player
+// -------------------------------
+
+app.get('/players', (req, res) =>{
+    teamApi.getAllPlayers()
+    .then(players => {
+        res.render("player/player", { players });
+    });
+});
+
+// Posting a new player
+app.post('/player', (req, res) =>{
+    playerApi.createPlayer(req.body)
+    .then(() =>{
+        res.render("player/created");
+    });
+});
+
+// Deleting a Player
+app.delete('/player/:playerId', (req, res) =>{
+    playerApi.deletePlayerById(req.params.playerId)
+    .then(() => {
+        res.render("player/deleted");
+    });
+});
+
+// grab a single Player
+app.get('/player/:playerId', (req, res) =>{
+    //gets player
+    playerApi.getPlayerById(req.params.playerId)
+    .then(players => {
+        res.render("player/player", { players });
+        });
+    });
+
+
+
 //creating boilerplate express code
 const PORT = 3000;
 app.listen(PORT, () => {
