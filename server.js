@@ -21,7 +21,14 @@ app.set('view engine', 'hbs');
 app.get('/teams', (req, res) =>{
     teamApi.getAllTeams()
     .then(teams => {
-        res.render("teams/teams", {listOfTeams: teams});
+        res.render("teams/teams", { teams});
+    });
+});
+
+app.post('/teams', (req, res) =>{
+    teamApi.createNewTeams(req.body)
+    .then(() =>{
+        res.render("teams/created");
     });
 });
 
