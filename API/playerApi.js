@@ -21,3 +21,8 @@ function createPlayer(newPlayer, playerId){
 function getAllPlayersByPlayerId(pId) {
     return PlayerCollection.find({ playerId: pId})
 }
+
+module.exports = {
+    createPlayer,
+    getAllPlayersByPlayerId
+};
