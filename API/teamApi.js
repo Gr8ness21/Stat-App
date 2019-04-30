@@ -8,7 +8,7 @@ const TeamSchema = mongoose.Schema({
 });
 
 //creating an API that will take the "teams" collection in mongodb
-let TeamCollection = mongoose.model("Team", TeamSchema);
+let TeamCollection = mongoose.model("team", TeamSchema);
 
 // Fuction to get all Teams
 function getAllTeams() {
