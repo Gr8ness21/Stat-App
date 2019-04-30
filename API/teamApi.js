@@ -16,3 +16,13 @@ function getAllTeams() {
     return TeamCollection.find();
 }
 
+// Function to create new teams
+function createNewTeams(newTeamData){
+    return TeamCollection.create(newTeamData);
+}
+
+// calls all established functions to be exported
+module.exports = {
+    getAllTeams,
+    createNewTeams
+};
