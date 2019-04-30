@@ -21,6 +21,16 @@ function createNewTeams(newTeamData){
     return TeamCollection.create(newTeamData);
 }
 
+// Function to get team by Id
+function getTeamById(teamId) {
+    return TeamCollection.findById(teamId);
+}
+
+// Function to delete team by Id
+function deleteTeamById(teamId) {
+    return TeamCollection.deleteOne({ _id: teamId });
+}
+
 // calls all established functions to be exported
 module.exports = {
     getAllTeams,
