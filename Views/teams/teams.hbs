@@ -1,0 +1,16 @@
+<h1>Teams</h1>
+<ul>
+{{#each listOfTeam}}
+<li>
+    <a href="/teams/{{_id}}">
+    {{name}}
+    </a>
+</li>
+{{/each}}
+</ul>
+
+<form method="POST" action="/teams">
+    <label for="name">Name</label>
+    <input type="text" name="name" value=""/>
+    <input type="submit" value="Create New Team" />
+</form>
