@@ -1,4 +1,4 @@
-const mongoose = require('./connection.js')
+const mongoose = require('../database/connection.js');
 
 //when defining constructors capital first letters will be used.
 //defining the entities

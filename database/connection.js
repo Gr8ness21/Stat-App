@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 //   .then(() => {
 //     console.log("mongo is working");
 //   })
-const connectionString = 'mongodb://localhost/27017/stat_app';
+const connectionString = 'mongodb://localhost/stat_app';
 if (process.env.MONGODB_URI) {
     mongoose.connect(process.env.MONGODB_URI);
 } else {

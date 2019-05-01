@@ -1,4 +1,4 @@
-const mongoose = require('./connection.js');
+const mongoose = require('../database/connection.js');
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
 // Defining the shape of the player object
