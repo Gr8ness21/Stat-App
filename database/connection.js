@@ -1,11 +1,11 @@
 //connecting mongoose
-const mongoose = require('mongoose');
-const connectionString = "mongodb://localhost/atm";
+const mongoose = require('mongoose')
 
-//newUrlParser disables the deprication warning
-mongoose.connect(connectionString, {useNewUrlParser: true})
-    .then(() =>{
-        console.log("connected to mongo at:" + connectionString);
-    });
+const dbConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/stat_app'
+mongoose.connect(dbConnection, { useNewUrlParser: true})
+  .then(() => {
+    console.log("mongo is working");
+  })
 
-module.exports= mongoose;
+// export your mongoose connection
+module.exports = mongoose;
