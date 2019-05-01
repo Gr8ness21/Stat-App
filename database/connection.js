@@ -6,11 +6,11 @@ const mongoose = require('mongoose')
 //   .then(() => {
 //     console.log("mongo is working");
 //   })
-const connectionString = 'mongodb://localhost/stat_app';
 if (process.env.MONGODB_URI) {
     mongoose.connect(process.env.MONGODB_URI);
-} else {
-    mongoose.connect(connectionString, { useNewUrlParser: true })
+} 
+else {
+    mongoose.connect('mongodb://localhost/stat_app', { useNewUrlParser: true })
 }
 mongoose.connection.on('error', function(err) {
     console.error('MongoDB connection error: ' + err);
