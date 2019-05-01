@@ -14,8 +14,9 @@ const PlayerSchema = mongoose.Schema({
 let PlayerCollection = mongoose.model("Player", PlayerSchema);
 
 // Function to Create New players
-function createPlayer(newPlayer, playerId){
+function createPlayer(newPlayer, playerId) {
     newPlayer.playerId = playerId;
+    // newPlayer.userId = userId;
     return PlayerCollection.create(newPlayer);
 }
 
@@ -27,7 +28,7 @@ function getAllPlayers() {
 
 // Function to Get all players by Id
 function getAllPlayersByPlayerId(pId) {
-    return PlayerCollection.find({ playerId: pId});
+    return PlayerCollection.find({ playerId: pId });
 }
 
 // Function to get player by Id
@@ -40,11 +41,24 @@ function deletePlayerById(playerId) {
     return PlayerCollection.deleteOne({ _id: playerId });
 }
 
+
+function getPlayersByTeamId(pId) {
+    return PlayerCollection.find({ userId: pId });
+}
+
+// Function to update Player
+function updatePlayerById(playerId, player) {
+    return PlayerCollection.updateOne({ _id: playerId }, player);
+    //possible bug: not sure if it works
+}
+
 // calls all established functions to be exported
 module.exports = {
     createPlayer,
     getAllPlayers,
     getAllPlayersByPlayerId,
     getPlayerById,
-    deletePlayerById
+    deletePlayerById,
+    getPlayersByTeamId,
+    updatePlayerById
 };

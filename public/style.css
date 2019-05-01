@@ -1,6 +1,40 @@
+*{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    text-align: center;
+    background-color: gray;
+    color: whitesmoke;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .basketball{
     height: 300px;
     width: 300px;
     border: solid red;
     border-width: 12px;
+    text-align: center;
+    border-radius: 21px;
+}
+.football{
+    height: 300px;
+    width: 300px;
+    border: solid red;
+    border-width: 12px;
+    text-align: center;
+    border-radius: 21px;
+}
+.soccer{
+    height: 300px;
+    width: 300px;
+    border: solid red;
+    border-width: 12px;
+    text-align: center;
+    border-radius: 21px;
 }
