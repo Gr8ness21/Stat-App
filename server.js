@@ -4,8 +4,8 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose')
 
 //calling all established functions in respective APIs
-const teamApi = require('./api/teamApi.js');
-const playerApi = require('./api/playerApi.js');
+const teamApi = require('./API/teamApi.js');
+const playerApi = require('./API/playerApi.js');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
