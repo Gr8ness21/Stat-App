@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 // });
 
 // -------------------------------
-// Team
+// Team Model
 // -------------------------------
 app.get('/teams', (req, res) => {
     teamApi.getAllTeams()
@@ -79,7 +79,7 @@ app.put('/teams/:teamId', (req, res) => {
 });
 
 // -------------------------------
-// Player
+// Player Model
 // -------------------------------
 
 app.get('/players', (req, res) => {
@@ -118,7 +118,47 @@ app.get('/player/:playerId', (req, res) => {
 app.put('/player/:playerId', (req, res) => {
     playerApi.updatePlayerById(req.params.playerId, req.body)
         .then(() => {
-            res.redirect("/player");
+            res.render("player");
+        });
+});
+
+// -------------------------------
+// Stats Model
+// -------------------------------
+app.get('/stats', (req, res) => {
+    statApi.getAllStats()
+        .then(stats => {
+            res.render("stats/stats", { stats });
+        });
+});
+
+// Posting a new stat
+app.post('/stats', (req, res) => {
+    teamApi.createNewStat(req.body)
+        .then(() => {
+            res.render("stats/created");
+        });
+});
+
+// Deleting a stat
+app.delete('/stats/:statId', (req, res) => {
+    statApi.deleteStatById(req.params.statId)
+        .then(() => {
+            res.render("stats/deleted");
+        });
+});
+
+// grab a single stat
+app.get('/stats/:statId', (req, res) => {
+    //gets stat
+    teamApi.getStatById(req.params.statId)
+        .then((stat) => {
+            statApi.getStatsByStatId(req.params.statId)
+                .then((stats) => {
+                    console.log(players)
+                    console.log(stats)
+                    res.render("stats/stats", { players, stat });
+                });
         });
 });
 

@@ -8,6 +8,7 @@ body{
     background-color: gray;
     color: teal;
 }
+
 .container{
     display: flex;
     flex-direction: row;
@@ -17,6 +18,7 @@ body{
 .sport:hover{
     box-shadow: 0px 0px 20px black;
     background-color: whitesmoke;
+    /* background: url("/images/Sportsbackground.jpg"); */
     /* transition-delay: .7s; */
 }
 
