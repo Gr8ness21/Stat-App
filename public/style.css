@@ -28,7 +28,7 @@ body{
     border: solid whitesmoke;
     border-width: 12px;
     text-align: center;
-    border-radius: 21px;
+    border-radius: 50px;
 }
 
 .football{
@@ -37,7 +37,7 @@ body{
     border: solid whitesmoke;
     border-width: 12px;
     text-align: center;
-    border-radius: 21px;
+    border-radius: 50px;
 }
 .soccer{
     height: 300px;
@@ -45,7 +45,7 @@ body{
     border: solid whitesmoke;
     border-width: 12px;
     text-align: center;
-    border-radius: 21px;
+    border-radius: 50px;
 }
 
 form{
