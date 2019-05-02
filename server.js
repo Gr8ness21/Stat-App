@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
-const mongoose = require('database/connection')
+const mongoose = require('mongoose')
 
 //calling all established functions in respective APIs
 const teamApi = require('./api/teamApi.js');
