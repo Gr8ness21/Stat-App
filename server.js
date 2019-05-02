@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
-const mongoose = require('mongoose')
 
 //calling all established functions in respective APIs
 const teamApi = require('./API/teamApi.js');
@@ -15,19 +14,13 @@ app.set('view engine', 'hbs');
 
 // Linking CSS
 app.use('/public', express.static("public"))
-// app.use('style.css', express.static("style.css"));
-
-// const dbConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/stat_app'
-// mongoose.connect(dbConnection, { useNewUrlParser: true})
-//   .then(() => {
-//     console.log("mongo is working");
-//   })
-
 
 // Rendering home page
 app.get('/', (req, res) => {
     res.render('home')
 });
+
+
 
 // connecting to the port/view
 // displays when you go to local server - localhost:3000/
