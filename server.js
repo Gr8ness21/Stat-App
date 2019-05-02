@@ -16,6 +16,13 @@ app.set('view engine', 'hbs');
 app.use('/public', express.static("public"))
 // app.use('style.css', express.static("style.css"));
 
+const dbConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/stat_app'
+mongoose.connect(dbConnection, { useNewUrlParser: true})
+  .then(() => {
+    console.log("mongo is working");
+  })
+
+
 // Rendering home page
 app.get('/', (req, res) => {
     res.render('home')
